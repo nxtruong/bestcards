@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#173e36"><meta name="description" content="Your cards. Your offers. A better choice at checkout.">
+  <title>Pocket Perks — choose your card</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css">
+  <script type="module" src="src/app.js"></script>
+</head>
+<body>
+  <header class="header"><a class="brand" href="./"><img src="icon.svg" width="38" height="38" alt=""><span>Pocket Perks<small>A little more from every purchase</small></span></a><label class="profile-label">Shopping as<select id="profile" aria-label="Choose person" disabled><option>Loading…</option></select></label></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">YOUR CHECKOUT COMPANION</p><h1>The right card.<br>A little more back.</h1><p class="lead">Find your store, check your offers, and make the most of what’s already in your wallet.</p></div><div class="intro-card"><span class="small-caps">A GOOD HABIT, MADE SIMPLE</span><svg class="big-symbol" aria-hidden="true" width="56" height="56" viewBox="0 0 56 56" fill="none"><path d="M12 44 44 12M12 12h32v32" stroke="currentColor" stroke-width="2"/></svg><p>Same purchase.<br>Smarter rewards.</p><span class="mini-chips"><span>No bank connection</span><span>Your own rules</span></span></div></section>
+    <div id="status" class="notice" role="status" aria-live="polite">Loading your wallet…</div>
+    <div class="workspace">
+      <section class="panel store-panel" aria-labelledby="store-heading"><div class="section-top"><span class="step">01</span><div><h2 id="store-heading">Where are you shopping?</h2><p>Discover nearby, or choose a category.</p></div></div>
+        <button id="locate" class="primary" disabled><span aria-hidden="true">⌖</span> Find nearby businesses</button>
+        <div class="location-controls"><label>Search radius<select id="radius"><option value="200">200 m</option><option value="500">500 m</option><option value="1000">1 km</option></select></label><button id="demo" class="text-button" disabled>Try sample stores</button></div>
+        <p id="location-status" class="muted" role="status">Location is requested only when you tap the button.</p>
+        <label class="search-label">Filter results<input id="search" type="search" placeholder="Name or brand…" autocomplete="off"></label>
+        <div id="businesses" class="businesses" aria-label="Nearby businesses"><p class="empty">Your nearby businesses will appear here.<br>Prefer to skip location? Use a category below.</p></div>
+        <details id="manual" class="manual"><summary>Choose a category or enter a store</summary><form id="manual-form"><label>Merchant or brand (optional)<input id="merchant-name" placeholder="e.g. Chevron"></label><label>Category<select id="manual-category"></select></label><button class="secondary" type="submit">Compare cards here</button></form></details>
+        <p class="attribution">Business data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>. Categories are estimates.</p>
+      </section>
+      <section class="results-panel" aria-labelledby="results-heading"><div class="panel purchase-panel"><div class="section-top"><span class="step">02</span><div><h2 id="results-heading">Choose your best card</h2><p id="selected-store">Select a business or category to begin.</p></div></div>
+        <div class="purchase-fields"><label>Purchase amount ($)<input id="amount" type="number" inputmode="decimal" min="0.01" max="1000000" step="0.01" placeholder="e.g. 50.00"></label><label>Purchase channel<select id="channel"><option value="in_store">In store</option><option value="online">Online</option></select></label></div>
+        <div id="category-adjustment" hidden><label>Reward category <select id="category-override"></select></label><p class="muted">Confirm the category if your card issuer treats this merchant differently.</p></div>
+      </div><div id="recommendations" aria-live="polite"><div class="waiting"><span aria-hidden="true">✦</span><h3>Your wallet, working together.</h3><p>We’ll compare your cards and matching offers here.</p></div></div></section>
+    </div>
+    <section class="panel offers-panel"><div class="section-top"><span class="step">03</span><div><h2>Offers in your pocket</h2><p>Mark one-time offers used after you redeem them. Updates stay on this device.</p></div><button id="reload" class="text-button" disabled>Reload config</button></div><div id="offers"></div></section>
+    <details class="panel settings"><summary>Config &amp; help</summary><div class="settings-content"><p id="config-info"></p><p>Profile selection is a convenience, not a login. Public config files are readable by anyone with their URL. Keep account numbers and passwords out of them.</p><p>Your location goes to the selected Overpass server when you search. No bank accounts are connected. This app does not activate bank offers or verify eligibility.</p><p>Reward estimates use your configured point values. Check offer activation, exclusions, category eligibility, and remaining caps before paying.</p><p><a href="docs/USER_GUIDE.md">Detailed user guide</a> · <a href="docs/CONFIGURATION.md">Configuration reference</a> · <a href="README.md">Setup instructions</a></p><button id="reset" class="secondary">Reset this profile’s local offer history</button></div></details>
+    <footer>Pocket Perks <span>Personal rewards, thoughtfully compared.</span></footer>
+  </main><noscript><p>This app needs JavaScript enabled.</p></noscript>
+</body></html>

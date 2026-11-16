@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "sample": true,
+  "updated": "2026-11-07",
+  "cards": [
+    {"id":"chase-example","name":"Chase — example only","unit":"points","baseRate":1,"centsPerPoint":1.2,"categoryRates":{"dining":3}},
+    {"id":"capital-one-example","name":"Capital One — example only","unit":"points","baseRate":2,"centsPerPoint":1},
+    {"id":"cashback-example","name":"Cashback card — example only","unit":"cashback","baseRate":2,"categoryRates":{"groceries":3}}
+  ],
+  "categoryOverrides": [{"merchants":["Costco","Sam's Club","BJ's Wholesale"],"category":"wholesale"}],
+  "offers": [
+    {"id":"sample-gas-5x","card":"chase-example","title":"Gas: 5× total points","kind":"total_rate","value":5,"match":{"categories":["gas"],"excludeMerchants":["Costco","Sam's Club"]},"expires":"2099-12-31","spendCap":150,"note":"Fictional example. Set your actual expiration and remaining spending limit."},
+    {"id":"sample-publix-bonus","card":"capital-one-example","title":"Publix: 1,000 bonus points","kind":"fixed_points","value":1000,"match":{"merchants":["Publix"]},"minSpend":50,"channel":"in_store","expires":"2099-12-31","note":"Fictional example. Assumes an activated in-store offer and one qualifying purchase."},
+    {"id":"sample-chevron-cashback","card":"chase-example","title":"Chevron: extra 5% back","kind":"percent_cashback","value":5,"match":{"merchants":["Chevron"],"categories":["gas"]},"minSpend":20,"rewardCap":5,"channel":"in_store","expires":"2099-12-31","note":"Fictional additive offer. Only include real offers that can stack with other rewards."}
+  ]
+}

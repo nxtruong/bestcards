@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "appName": "Pocket Perks",
+  "users": [
+    { "id": "truong", "name": "Truong" },
+    { "id": "wife", "name": "Wife" }
+  ],
+  "profileUrlTemplate": "./profiles/{id}.json",
+  "radiusMeters": 200,
+  "overpassEndpoints": ["https://overpass-api.de/api/interpreter"]
+}

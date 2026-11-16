@@ -1,0 +1,13 @@
+{
+  "schemaVersion":1,
+  "sample":true,
+  "updated":"2026-11-07",
+  "cards":[
+    {"id":"everyday-example","name":"Everyday card — example only","unit":"cashback","baseRate":2},
+    {"id":"grocery-example","name":"Grocery card — example only","unit":"cashback","baseRate":1,"categoryRates":{"groceries":4,"gas":3}}
+  ],
+  "categoryOverrides":[],
+  "offers":[
+    {"id":"sample-dining","card":"everyday-example","title":"Dining: extra $5 on $30","kind":"fixed_cash","value":5,"minSpend":30,"match":{"categories":["dining"]},"expires":"2099-12-31","note":"Fictional example for a separate profile."}
+  ]
+}
